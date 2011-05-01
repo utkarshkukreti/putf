@@ -19,5 +19,8 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
+  s.add_dependency "slop", "~>1.5.3"
+  s.add_dependency "net-ssh", "~>2.1.4"
+  s.add_dependency "net-scp", "~>1.0.4"
   s.add_development_dependency "rspec", "~>2.5.0"
 end
