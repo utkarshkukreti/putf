@@ -6,7 +6,7 @@ describe Putf::CLI do
     Putf::CLI.new([])
   end
 
-  it "should print file name when passed a file name" do
+  pending "should print file name when passed a file name" do
     file = "foo.bar"
     $stdout.should_receive(:puts).with(/foo\.bar/)
     Putf::CLI.new([file])
