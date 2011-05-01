@@ -29,7 +29,11 @@ module Putf
 
       puts "Uploading #{expanded_path} to #{username}@#{host}:#{directory} (#{options[:to]})"
 
-      ssh = Net::SSH.start(host, username)
+      if password == ""
+        ssh = Net::SSH.start(host, username)
+      else
+        ssh = Net::SSH.start(host, username, :password => password)
+      end
 
       ssh.scp.upload(expanded_path, directory)
 
